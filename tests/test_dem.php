@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 
-include('./esri_grid.php');
+include('../esri_grid.php');
 
 $max = -99999;
 $min = 100000;

@@ -146,8 +146,9 @@ class EsriGridFiles {
       }
       else {
         // append g to current lines
+        $delta = count($grid) - count($g);
         foreach ($g as $g_i => $g_line) {
-          $grid[count($grid) - count($g) + $g_i] = array_merge($grid[count($grid) - count($g) + $g_i], $g_line);
+          $grid[$delta + $g_i] = array_merge($grid[$delta + $g_i], $g_line);
         }
       }
      

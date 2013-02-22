@@ -29,6 +29,7 @@ function calc_stats($x, $y, $elevation) {
 }
 
 ?>
+```
 
 ### Multiple tile handling
 
@@ -43,4 +44,5 @@ echo "max: $max, min: $min\n";
 var_dump($grid);
 
 ?>
+```
 

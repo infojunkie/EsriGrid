@@ -1,18 +1,7 @@
 <?php
+namespace infojunkie\EsriGrid;
 
-// Esri ARC/INFO ASCII GRID reader.
-// http://en.wikipedia.org/wiki/Esri_grid
-
-class EsriGridException extends Exception {
-  const FILE_NOT_FOUND  = 'File not found';
-  const POINT_NOT_FOUND = 'Point not found';
-
-  function __construct($error) {
-    parent::__construct($error);
-  }
-}
-
-class EsriGridFile {
+class GridFile {
   var $file;
   var $ncols;
   var $nrows;
@@ -23,9 +12,9 @@ class EsriGridFile {
   var $lines_seek = array();
 
   function __construct($filepath) {
-    $this->file = fopen($filepath, 'r');
+    $this->file = @fopen($filepath, 'r');
     if (!$this->file) {
-      throw new EsriGridException(EsriGridException::FILE_NOT_FOUND);
+      throw new Exception(Exception::FILE_NOT_FOUND);
     }
     $this->parseHeader();
   }
